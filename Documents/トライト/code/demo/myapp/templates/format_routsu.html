@@ -1,0 +1,315 @@
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/routsu_format.css' %}">
+    <title>労通フォーマット</title>
+</head>
+<!-- ユーザによって入力できる項目を変更 -->
+
+<div class="all">
+    <br>
+    <h3 class="heading">労働条件通知書（兼内定通知書）</h3>
+
+    <table class="baseinfotable">
+        <tr>
+            <td class="baseinfo-data">やまだ たろう 殿</td>
+            <td class="baseinfo-label">紹介元：</td>
+            <td class="baseinfo-data">testtesttest</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="baseinfo-label">担当：</td>
+            <td class="baseinfo-data">testtesttest</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="baseinfo-label">連絡先：</td>
+            <td class="baseinfo-data">{{連絡先電話番号}}</td>
+        </tr>
+    </table>
+    <p class="context">　この度は様の内定、おめでとうございます。採用にあたっての労働条件は下記の通りです。</p>
+
+    <table border="1" class="routsutable">
+        <tr>
+            <td style="width: 180px;">就業施設</td>
+            <td colspan="12"></td>
+        </tr>
+        <tr>
+            <td>勤務先住所</td>
+            <td colspan="3">〒<input type="text"></td>
+            <td colspan="9"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>入職日</td>
+            <td colspan="3"><select>
+                    <option></option>
+                </select>年</td>
+            <td colspan="3"><select>
+                    <option></option>
+                </select>月</td>
+            <td colspan="3"><select>
+                    <option></option>
+                </select>日</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td>勤務形態</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>期間の定め</td>
+            <td colspan="3"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+            <td colspan="3">有の場合</td>
+            <td colspan="6"><select>
+                    <option></option>
+                </select>年<select>
+                    <option></option>
+                </select>月<select>
+                    <option></option>
+                </select>日　～<select>
+                    <option></option>
+                </select>年<select>
+                    <option></option>
+                </select>月<select>
+                    <option></option>
+                </select>日</td>
+        </tr>
+        <tr>
+            <td>試用期間</td>
+            <td colspan="3"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+            <td colspan="3">有の場合</td>
+            <td colspan="6">入社から<select>
+                    <option></option>
+                </select>ヵ月間</td>
+        </tr>
+        <tr>
+            <td>勤務時間①</td>
+            <td colspan="2"><select>
+                    <option></option>
+                </select>時<select>
+                    <option></option>
+                </select>分</td>
+            <td colspan="2">～</td>
+            <td colspan="2"><select>
+                <option></option>
+            </select>時<select>
+                <option></option>
+            </select>分</td>
+            <td colspan="3">勤務①の休憩時間</td>
+            <td colspan="3"><select>
+                    <option></option>
+                </select>分</td>
+        </tr>
+        <tr>
+            <td>勤務時間②</td>
+            <td colspan="2"><select>
+                <option></option>
+            </select>時<select>
+                <option></option>
+            </select>分</td>
+        <td colspan="2">～</td>
+        <td colspan="2"><select>
+            <option></option>
+        </select>時<select>
+            <option></option>
+        </select>分</td>
+            <td colspan="3">勤務①の休憩時間</td>
+            <td colspan="3"><select>
+                    <option></option>
+                </select>分</td>
+        </tr>
+        <tr>
+            <td>勤務時間③</td>
+            <td colspan="2"><select>
+                <option></option>
+            </select>時<select>
+                <option></option>
+            </select>分</td>
+        <td colspan="2">～</td>
+        <td colspan="2"><select>
+            <option></option>
+        </select>時<select>
+            <option></option>
+        </select>分</td>
+            <td colspan="3">勤務①の休憩時間</td>
+            <td colspan="3"><select>
+                    <option></option>
+                </select>分</td>
+        </tr>
+        <tr>
+            <td>勤務時間④</td>
+            <td colspan="2"><select>
+                <option></option>
+            </select>時<select>
+                <option></option>
+            </select>分</td>
+        <td colspan="2">～</td>
+        <td colspan="2"><select>
+            <option></option>
+        </select>時<select>
+            <option></option>
+        </select>分</td>
+            <td colspan="3">勤務①の休憩時間</td>
+            <td colspan="3"><select>
+                    <option></option>
+                </select>分</td>
+        </tr>
+        <tr>
+            <td>残業</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+
+        <tr>
+            <td>勤務日</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>仕事内容</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>基本給</td>
+            <td colspan="4"><input type="text"></td>
+            <td colspan="2">円</td>
+            <td colspan="3">基本給の補足</td>
+            <td colspan="3"><input type="text"></td>
+        </tr>
+        <tr>
+            <td rowspan="5">その他手当</td>
+            <td colspan="4"><input type="text"></td>
+            <td colspan="2">円</td>
+            <td rowspan="5" colspan="3">その他手当の補足</td>
+            <td colspan="3"><input type="text"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text"></td>
+            <td colspan="2">円</td>
+            <td colspan="3"><input type="text"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text"></td>
+            <td colspan="2">円</td>
+            <td colspan="3"><input type="text"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text"></td>
+            <td colspan="2">円</td>
+            <td colspan="3"><input type="text"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text"></td>
+            <td colspan="2">円</td>
+            <td colspan="3"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>賞与</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>賞与の詳細</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>昇給の有無</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>退職金</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>締日・支払日</td>
+            <td colspan="3">賃金締切日日</td>
+            <td colspan="3"><select>
+                    <option>末日</option>
+                </select></td>
+            <td colspan="3">賃金支払日日</td>
+            <td colspan="3"><select>
+                    <option>翌月15日</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>【福利厚生】健康保険</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>【福利厚生】厚生年金</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>【福利厚生】労災保険</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>【福利厚生】雇用保険</td>
+            <td colspan="12"><select>
+                    <option>有</option>
+                    <option>無</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>休日</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>就業場所における受動喫煙防止措置</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>備考欄</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>法人採用担当者指名</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>法人採用担当者連絡先</td>
+            <td colspan="12"><input type="text"></td>
+        </tr>
+    </table>
+
+    <p>※内定承諾の受諾期限は<input type="text">年<input type="text">月<input type="text">日とさせていただきます。</p>
+    <p>※上記条件は弊社にてお伺いしている条件です。
+    <p>　就業規則や細かな条件面など、詳細は就業先にご確認くださいますと幸いでございます。
+        <br>
+    <p>上記、労働条件に同意し、{ｘｘｘｘ}年{ｘｘ}月{ｘｘ}日より入職致します。
+
+    <p>年　　月　　日</p>
+
+
+    <table border="1">
+        <tr>
+            <td style="width: 180px;">求職者確認欄</td>
+            <td style="width: 700px;">署名：</td>
+        </tr>
+    </table>
+
+</div>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>format</title>
+    <style>
+        body {
+            font-family: HeiseiMin-W3;
+        }
+
+        td {
+            height: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .base-info {
+            text-align: right;
+            width: 60px;
+        }
+
+        .item{
+            text-align: center;
+            padding-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>労働条件通知書（兼内定通知書）</h2>
+
+    <table>
+        <tr>
+            <td>{{SK_NAME}} 殿</td>
+            <td class="base-info"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="base-info">紹介元：</td>
+            <td>{{トライト支社名}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="base-info">担当：</td>
+            <td>{{トライト営業担当者名}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="base-info">連絡先：</td>
+            <td>{{連絡先電話番号}}</td>
+        </tr>
+    </table>
+    <br>
+    <p>この度は様の内定、おめでとうございます。採用にあたっての労働条件は下記の通りです。</p>
+
+    <table border="1">
+        <tr>
+            <td class="item" style="width: 180px;">就業施設</td>
+            <td colspan="12">{{FCL_NAME}}</td>
+        </tr>
+        <tr>
+            <td class="item">勤務先住所</td>
+            <td colspan="12">〒{{routsu_data.FCL_POSTALNUMBER}} {{routsu_data.FCL_ADDRESS}}</td>
+        </tr>
+        <tr>
+            <td class="item">入職日</td>
+            <td colspan="12">{{routsu_data.ENTERING_DAY}}</td>
+        </tr>
+        <tr>
+            <td class="item">勤務形態</td>
+            <td colspan="12">{{routsu_data.WORL_STYLE}}</td>
+        </tr>
+        <tr>
+            <td class="item">期間の定め</td>
+            <td colspan="3">{{routsu_data.PERIOD_Y_OR_N}}</td>
+            <td colspan="3">有の場合</td>
+            <td colspan="6">{{routsu_data.START_DATE}}～{{routsu_data.START_DATE}}</td>
+        </tr>
+        <tr>
+            <td class="item">試用期間</td>
+            <td colspan="3" style="width: 150px;">{{routsu_data.PROBATION_PERIOD_Y_OR_N}}</td>
+            <td colspan="3" style="width: 150px;">有の場合</td>
+            <td colspan="6">入社から{{routsu_data.PROBATION_PERIOD_MONTH}}ヵ月間</td>
+        </tr>
+        <tr>
+            <td class="item">勤務時間①</td>
+            <td colspan="6" style="width: 300px;">{{routsu_data.WORK_START_TIME_1}}～{{routsu_data.WORK_END_TIME_1}}</td>
+            <td colspan="3" style="width: 160px;">勤務①の休憩時間</td>
+            <td colspan="3" style="width: 160px;">{{routsu_data.BREAK_TIME_1}}分</td>
+        </tr>
+        <tr>
+            <td class="item">勤務時間②</td>
+            <td colspan="6">{{routsu_data.WORK_START_TIME_2}}～{{routsu_data.WORK_END_TIME_2}}</td>
+            <td colspan="3">勤務②の休憩時間</td>
+            <td colspan="3">{{routsu_data.BREAK_TIME_2}}分</td>
+        </tr>
+        <tr>
+            <td class="item">勤務時間③</td>
+            <td colspan="6">{{routsu_data.WORK_START_TIME_3}}～{{routsu_data.WORK_END_TIME_3}}</td>
+            <td colspan="3">勤務③の休憩時間</td>
+            <td colspan="3">{{routsu_data.BREAK_TIME_3}}分</td>
+        </tr>
+        <tr>
+            <td class="item">勤務時間④</td>
+            <td colspan="6">{{routsu_data.WORK_START_TIME_4}}～{{routsu_data.WORK_END_TIME_4}}</td>
+            <td colspan="3">勤務④の休憩時間</td>
+            <td colspan="3">{{routsu_data.BREAK_TIME_4}}分</td>
+        </tr>
+        <tr>
+            <td class="item">残業</td>
+            <td colspan="12">{{routsu_data.OVER_TIME}}</td>
+        </tr>
+
+        <tr>
+            <td class="item">勤務日</td>
+            <td colspan="12">{{routsu_data.WORKING_DATE}}</td>
+        </tr>
+        <tr>
+            <td class="item">仕事内容</td>
+            <td colspan="12">{{routsu_data.WORK_DESCRIPTION}}</td>
+        </tr>
+        <tr>
+            <td class="item">基本給</td>
+            <td colspan="4">{{routsu_data.BASE_SALARY}}円</td>
+            <td colspan="3">基本給の補足</td>
+            <td colspan="3">{{routsu_data.ALLOWANCE_SUPPLEMENT_1}}</td>
+        </tr>
+        <tr>
+            <td class="item" rowspan="5">その他手当</td>
+            <td colspan="4">{{routsu_data.ALLOWANCE_1}}円</td>
+            <td rowspan="5" colspan="3">その他手当の補足</td>
+            <td colspan="3">{{routsu_data.ALLOWANCE_SUPPLEMENT_1}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{routsu_data.ALLOWANCE_2}}円</td>
+            <td colspan="3">{{routsu_data.ALLOWANCE_SUPPLEMENT_2}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{routsu_data.ALLOWANCE_3}}円</td>
+            <td colspan="3">{{routsu_data.ALLOWANCE_SUPPLEMENT_3}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{routsu_data.ALLOWANCE_4}}円</td>
+            <td colspan="3">{{routsu_data.ALLOWANCE_SUPPLEMENT_4}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{routsu_data.ALLOWANCE_5}}円</td>
+            <td colspan="3">{{routsu_data.ALLOWANCE_SUPPLEMENT_5}}</td>
+        </tr>
+        <tr>
+            <td class="item">賞与</td>
+            <td colspan="12">{{routsu_data.BONUS}}</td>
+        </tr>
+        <tr>
+            <td class="item">賞与の詳細</td>
+            <td colspan="12">{{routsu_data.BONUS_DETAIL}}</td>
+        </tr>
+        <tr>
+            <td class="item">昇給の有無</td>
+            <td colspan="12">{{routsu_data.SALARY_RAISE_Y_OR_N}}</td>
+        </tr>
+        <tr>
+            <td class="item">退職金</td>
+            <td colspan="12">{{routsu_data.RETIREMENT_ALLOWANCE_Y_OR_N}}</td>
+        </tr>
+        <tr>
+            <td class="item">締日・支払日</td>
+            <td colspan="3">賃金締切日日</td>
+            <td colspan="3">{{routsu_data.SALARY_CUT_OFF_DATE}}</td>
+            <td colspan="3">賃金支払日日</td>
+            <td colspan="3">{{routsu_data.SALARY_PAY_DATE}}</td>
+        </tr>
+        <tr>
+            <td class="item">【福利厚生】健康保険</td>
+            <td colspan="12">{{routsu_data.HEALTH_INSURANCE_Y_OR_N}}</td>
+        </tr>
+        <tr>
+            <td class="item">【福利厚生】厚生年金</td>
+            <td colspan="12">{{routsu_data.WALFARE_PENSION_Y_OR_N}}</td>
+        </tr>
+        <tr>
+            <td class="item">【福利厚生】労災保険</td>
+            <td colspan="12">{{routsu_data.COMPENSATION_INSURANCE_Y_OR_N}}</td>
+        </tr>
+        <tr>
+            <td class="item">【福利厚生】雇用保険</td>
+            <td colspan="12">{{routsu_data.EMPLOYEE_INSURANCE_Y_OR_N}}</td>
+        </tr>
+        <tr>
+            <td class="item">休日</td>
+            <td colspan="12">{{routsu_data.HOLIDAY}}</td>
+        </tr>
+        <tr>
+            <td  class="item">就業場所における受動喫煙防止措置</td>
+            <td colspan="12">{{routsu_data.PS_KBN}}</td>
+        </tr>
+        <tr>
+            <td class="item">備考欄</td>
+            <td colspan="12">{{routsu_data.NOTES}}</td>
+        </tr>
+        <tr>
+            <td class="item">法人採用担当者氏名</td>
+            <td colspan="12">{{routsu_data.FCL_PERSON}}</td>
+        </tr>
+        <tr>
+            <td class="item">法人採用担当者連絡先</td>
+            <td colspan="12">{{routsu_data.FCL_PHONENUMBER}}</td>
+        </tr>
+    </table>
+
+    <p>※内定承諾の受諾期限は{{routsu_data.ACCEPT_DEADLINE_DATE}}とさせていただきます。</p>
+    <p>※上記条件は弊社にてお伺いしている条件です。
+    <p>　就業規則や細かな条件面など、詳細は就業先にご確認くださいますと幸いでございます。
+        <br>
+    <p>上記、労働条件に同意し、{ｘｘｘｘ}年{ｘｘ}月{ｘｘ}日より入職致します。
+
+    <p>年　　月　　日</p>
+
+
+    <table border="1">
+        <tr>
+            <td style="width: 180px;">求職者確認欄</td>
+            <td style="width: 700px;">署名：</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<p>{{ data.ID }}</p>
+    <h2>労働条件通知書作成フォーム</h2>
+
+    <h3>以下の項目を選択または入力してください</h3>
+    <p style="color: red;">※は必須項目となります</p>
+
+    {% include 'test/templates/format_routsu.html' %}
+
+    <button onclick="location.href='#'">一時保存</button>
+    <button onclick="location.href='/facility/check/routsu'">内容を確認する</button>
+
+    <footer>
+        <a href="#">問合せ</a>
+    </footer>
+</body>
+
+</html>

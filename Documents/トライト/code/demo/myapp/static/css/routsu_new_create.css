@@ -1,0 +1,91 @@
+.heading {
+    color: #FFCC33;
+    text-align: center;
+}
+
+.instruction {
+    text-align: center;
+    color: #666666;
+}
+
+.caution {
+    color: red;
+    text-align: center;
+    font-size: 13px;
+}
+
+.datatable {
+    margin: auto;
+    color: #555555;
+}
+
+.space {
+    width: 50px;
+}
+
+.input {
+    border-radius: 25px;
+    border: none;
+    background-color: #FFE4B5;
+    width: 300px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.form-seekerdata {
+    max-width: 850px;
+    padding: 0px 20px 30px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.seekercaution {
+    color: #555555;
+    text-align: center;
+    font-size: 13px;
+}
+
+.seekerdatatale {
+    margin: auto;
+    color: #555555;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.returnbtn {
+    background: #FFF;
+    padding: 9px 70px;
+    border-radius: 25px;
+    border: 1px solid #FF9900;
+    text-decoration: none;
+    color: #FF9900;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 9px 70px;
+    border-radius: 25px;
+    border: none;
+    text-decoration: none;
+    color: #FFF;
+    background: linear-gradient(to right, #FF9900, #9ACD32);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.log {
+    max-width: 850px;
+    height: 80px;
+    padding: 0px 20px 30px;
+    margin: 0 auto;
+    background-color: #DCDCDC;
+    border: none;
+    border-radius: 5px;
+    overflow-y: scroll;
+}

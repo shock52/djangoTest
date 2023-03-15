@@ -1,0 +1,13 @@
+Django==4.1.2
+
+Datetime
+xhtml2pdf
+pandas
+string
+random
+boto3
+
+# この３つはセット
+google
+google-cloud-bigquery
+db_dtypes

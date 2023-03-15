@@ -1,0 +1,39 @@
+.heading {
+    color: #444444;
+    text-align: center;
+}
+
+.all{
+    color: #444444;
+    max-width: 900px;
+    max-height: 2000px;
+    padding: 0px 20px 30px;
+    margin: 0 auto;
+    border: 1px solid ;
+    box-shadow: 0 0 8px gray;
+}
+
+.baseinfotable {
+    margin: auto;
+    width: 870px;
+}
+
+.baseinfo-data {
+    text-align: left;
+}
+
+.baseinfo-label {
+    text-align: right;
+}
+
+.routsutable {
+    border-collapse: separate;
+    border-collapse: collapse;
+    border-color: black;
+    margin: auto;
+    width: 850px;
+}
+
+.context {
+    text-align: left;
+}

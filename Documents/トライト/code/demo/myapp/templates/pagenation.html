@@ -1,0 +1,42 @@
+<div class="paginator">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+
+        <!-- 前ページがあれば「前へ」と表示 -->
+        {% if datas.has_previous %}
+        <a class="pagination-previous" href="?p={{ datas.previous_page_number }}">前へ</a>
+        {% endif %}
+
+        <!-- 次ページがあれば「次へ」と表示 -->
+        {% if datas.has_next %}
+        <a class="pagination-next" href="?p={{ datas.next_page_number }}">次へ</a>
+        {% endif %}
+
+        <ul class="pagination-list">
+
+            {% if datas.has_previous %}
+            <!-- １ページ目と３点リーダー表示 -->
+            {% if datas.previous_page_number != 1 %}
+            <li><a class="pagination-link" href="?p=1">1</a></li>
+            <li><span class="pagination-ellipsis">&hellip;</span></li>
+            {% endif %}
+            <!-- ひとつ前のページ表示 -->
+            <li><a class="pagination-link" href="?p={{ datas.previous_page_number }}">{{ datas.previous_page_number }}</a></li>
+            {% endif %}
+
+            <!-- 現在のページ -->
+            <li><a class="pagination-link is-current" href="?p={{ datas.number }}">{{ datas.number }}</a></li>
+            
+            <!-- ひとつ先のページ表示 -->
+            {% if datas.has_next %}
+            <li><a class="pagination-link" href="?p={{ datas.next_page_number }}">{{ datas.next_page_number }}</a>
+            </li>
+
+            <!-- ３点リーダーと最終ページ表示 -->
+            {% if datas.next_page_number != datas.paginator.num_pages %}
+            <li><span class="pagination-ellipsis">&hellip;</span></li>
+            <li><a class="pagination-link" href="?p={{ datas.paginator.num_pages }}">{{ datas.paginator.num_pages }}</a></li>
+            {% endif %}
+            {% endif %}
+        </ul>
+    </nav>
+</div>

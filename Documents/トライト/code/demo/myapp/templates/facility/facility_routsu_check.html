@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <h2>労働条件通知書ご確認</h2>
+    <h3>入力した項目をご確認ください</h3>
+
+    {% include 'myapp/templates/format_comp_routsu.html' %}
+
+    <br>
+    <button onclick="location.href='#'">入力画面に戻る</button>
+    <button onclick="location.href='/facility/after/check'">営業担当にメール送信する</button>
+
+    <footer>
+        <a href="#">問合せ</a>
+    </footer>
+</body>
+
+</html>

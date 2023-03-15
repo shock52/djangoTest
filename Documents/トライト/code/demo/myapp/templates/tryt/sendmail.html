@@ -1,0 +1,73 @@
+{% extends "tryt/base.html" %}
+
+{% block content %}
+<script>
+    function copyToClipboard() {
+        // コピー対象をJavaScript上で変数として定義する
+        var copyTarget = document.getElementById("copyTarget");
+
+        // コピー対象のテキストを選択する
+        copyTarget.select();
+
+        // 選択しているテキストをクリップボードにコピーする
+        document.execCommand("Copy");
+        document.getElementById("output_text").style.display = "";
+    }
+</script>
+
+<!-- 施設宛か求職者宛かで表示変える -->
+
+<h2>労通新規作成 - 就業施設メールアドレス入力</h2>
+
+<table>
+    <tr>
+        <td>SFID</td>
+        <td>{000000}</td>
+        <td>施設名</td>
+        <td>{わくわくランド}</td>
+        <td>求職者名</td>
+        <td>{山田太郎}</td>
+    </tr>
+    <tr>
+        <td colspan="6">トライトキャリア　支社名　部署　担当名　000-0000-0000</td>
+    </tr>
+</table>
+
+<div>
+    <h3>就業施設へメール送信</h3>
+    <p>労通を送信するメールアドレスを入力してください</p>
+    <p style="color: red;">※宛先に間違いがないか必ず確認してください</p>
+
+    <table>
+        <tr>
+            <td>送信先</td>
+            <td><input type="text"></td>
+            <td>確認用</td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+    <button onclick="location.href='#'">戻る</button>
+    <button onclick="location.href='#'">この内容で労通を施設に送信する</button>
+    <!-- <button onclick="location.href='#'">求職者にメール送信</button> -->
+</div>
+
+<br>
+
+<div>
+    <h3>求職者へLINE/SMS送信</h3>
+    <p>LINEやSMSで送信する場合、こちらのURLをコピーして送信してください。</p>
+    <p style="color: red;">※必ず送信完了後に「完了する」を押してください。</p>
+
+    <input type="text" value="" id="copyTarget" readonly>
+    <button onclick="copyToClipboard()">URLをコピーする</button>
+
+    <p style="color: red; display: none;" id="output_text">URLがコピーされました。求職者様へ送信後必ず「完了する」ボタンを押してください。</p>
+    <br>
+    <button onclick="location.href='#'">戻る</button>
+    <button onclick="location.href='#'">完了する</button>
+</div>
+
+<div>
+    <!-- ログ -->
+</div>
+{% endblock %}

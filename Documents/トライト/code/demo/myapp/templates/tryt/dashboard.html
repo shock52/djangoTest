@@ -1,0 +1,49 @@
+{% extends "tryt/base.html" %}
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+    <title>ログイン</title>
+</head>
+
+<h2 class="heading">ダッシュボード</h2>
+<p>　件のうち　件</p>
+<table border="1" class="dashboard">
+    <tr class="label">
+        <th class="noborder">労通ID</th>
+        <th class="noborder states">ステータス</th>
+        <th class="noborder">更新日時</th>
+        <th class="noborder">送付期限</th>
+        <th class="border facility">施設名</th>
+        <th class="noborder seeker">求職者名</th>
+        <th class="noborder">年齢</th>
+        <th class="noborder">経験年数</th>
+        <th class="noborder">雇用形態</th>
+        <th class="noborder">保有資格</th>
+        <th class="noborder">作成者</th>
+        <th class="noborder">担当営業</th>
+        <th class="noborder checkbtn">労通確認</th>
+    </tr>
+    <tr class="data">
+        <td>00000000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button type="submit" class="btn">閲覧する</button></td>
+    </tr>
+</table>
+
+<!-- ページネーション -->
+{% include 'myapp/templates/pagenation.html' %}
+
+{% endblock %}

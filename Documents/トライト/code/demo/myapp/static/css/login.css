@@ -1,0 +1,62 @@
+.wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+
+.form-signin {
+    max-width: 450px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.heading {
+    color: #666666;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 200px;
+}
+
+.input {
+    border-radius: 25px;
+    border: none;
+    background-color: #FFE4B5;
+    width: 300px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+
+.label {
+    font-size: 14px;
+    color: #666666;
+    margin-left: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 125px;
+    border-radius: 25px;
+    border: none;
+    text-decoration: none;
+    color: #FFF;
+    background: linear-gradient(to right, #FF9900, #9ACD32);
+    margin-left: 105px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.save-info{
+    color: #666666;
+    font-size: 6px;
+    margin-left: 110px;
+}
+
+.forgot-pwd{
+    color: #666666;
+    font-size: 5px;
+    margin-left: 105px;
+}

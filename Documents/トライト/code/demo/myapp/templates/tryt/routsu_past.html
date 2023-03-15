@@ -1,0 +1,67 @@
+{% extends "tryt/base.html" %}
+
+{% block content %}
+<script type='text/javascript'>
+    //ダウンロード処理２回呼び出し
+    function download_file() {
+        // handleDownload("誓約書.pdf");
+        handleDownload("労働条件通知書.pdf");
+    }
+    function handleDownload(name) {
+        // IEの場合
+        if (window.navigator.msSaveBlob) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "pdf_disp/" + name, true);//メソッド呼び出し
+            xhr.responseType = "blob";//アクセスするのはファイルであること
+            xhr.onload = function (e) {
+                //ダウンロード処理
+                var blob = xhr.response;
+                window.navigator.msSaveBlob(blob, name);
+            }
+            xhr.send();
+            return;
+        }
+        // chrome,firefox
+        var a = document.createElement('a');
+        a.download = name;
+        a.href = "pdf_disp/" + name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function OnButtonClick() {
+        document.getElementById("output_textbox").style.display = "";
+    }
+</script>
+
+<h2>過去の労通</h2>
+
+<table>
+    <tr>
+        <td>SFID</td>
+        <td>{000000}</td>
+        <td>施設名</td>
+        <td>{わくわくランド}</td>
+        <td>求職者名</td>
+        <td>{山田太郎}</td>
+    </tr>
+    <tr>
+        <td colspan="6">トライトキャリア　支社名　部署　担当名　000-0000-0000</td>
+    </tr>
+</table>
+
+<!-- この部分スクロール可能に -->
+<div>
+<p>{xxxx/xx/xx}　{ステータス}　{xxxxxxxxxxx}</p>
+
+</div>
+
+{% include 'test\templates\format_routsu.html' %}
+<br>
+<button onclick="download_file()">PDFダウンロード</button>
+<br>
+<button onclick="location.href='#'">戻る</button>
+<button onclick="location.href='/create/new'">この内容で労通を新規作成</button>
+
+{% endblock %}

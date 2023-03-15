@@ -1,0 +1,32 @@
+# このComposeファイルの書式のバージョン
+version: "3"
+services:
+
+# Djangoアプリ
+  app:
+    #dockerfileをビルド。ファイルパス。
+    build: ./
+    container_name: 'test-image'
+    #コンテナ内の/codeとホストPCの./appを同一のものとして扱う
+    volumes:
+      - ./:/code
+    #コンテナ内の8000ポートとホストPCの8000ポートを同一のものとして扱う
+    ports:
+      - "8000:8000"
+    #コンテナに疑似TTYを割り当てる。コンテナが自動的に正常終了するのを防いで、起動したままにする。
+    # tty: true
+
+# Nginxの構成
+  # web:
+  #   #nginxの公式イメージ使用。
+  #   image: nginx
+  #   ports:
+  #     - "80:80"
+  #   networks:
+  #     - app_network
+  #   # appと連携
+  #   depends_on:
+  #     - app
+  #   volumes:
+  #     - ./web/project.conf:/etc/nginx/conf.d/default.conf
+  #   restart: always

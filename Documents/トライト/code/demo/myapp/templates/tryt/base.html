@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<header>
+    <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+            <a href="/dashboard" class="nav__toggle">労通管理</a>
+            <button onclick="location.href='/create_new'">新規作成</button>
+            <div class="search">
+                <form action="#" class="search-form-006">
+                    <label>
+                        <input type="search" name="" id="search" placeholder="ID　求職者名　施設名　作成者名　担当営業名">
+                    </label>
+                    <button type="submit" class="searchbtn"></button>
+                    <button type="submit">ソート</button>
+                </form>
+            </div>
+        </div>
+        <div class="site-header__end">
+            <ul class="sub-nav">
+                <li class=""><a href="/login">ログアウト</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div>
+                <p>名称カテゴリ</p>
+                <hr>
+                <ul>
+                    <li><input type="radio">全て</li>
+                    <li><input type="checkbox">求職者名</li>
+                    <li><input type="checkbox">施設名</li>
+                    <li><input type="checkbox">作成者</li>
+                    <li><input type="checkbox">担当営業</li>
+                </ul>
+                
+                <p>部署</p>
+                <hr>
+                <ul>
+                    <li><input type="radio">全て</li>
+                    <li><input type="checkbox">担当案件</li>
+                    <li><input type="checkbox">部署A</li>
+                    <li><input type="checkbox">部署B</li>
+                    <li><input type="checkbox">部署C</li>
+                    <li><input type="checkbox">部署D</li>
+                </ul>
+
+                <p>ステータス</p>
+                <hr>
+                <ul>
+                    <li><input type="radio">全て</li>
+                    <li><input type="checkbox">新規作成中</li>
+                    <li><input type="checkbox">施設送信済</li>
+                    <li><input type="checkbox">施設規約同意・対応中</li>
+                    <li><input type="checkbox">トライト最終確認中</li>
+                    <li><input type="checkbox">求職者規約同意・対応中</li>
+                    <li><input type="checkbox">求職者受託</li>
+                    <li><input type="checkbox">求職者保留</li>
+                    <li><input type="checkbox">求職者相談</li>
+                    <li><input type="checkbox">求職者辞退</li>
+                </ul>
+
+                <p>求職者年齢</p>
+                <hr>
+                <ul>
+                    <li><input type="radio">全て</li>
+                    <li><input type="checkbox">１０代</li>
+                    <li><input type="checkbox">２０代</li>
+                    <li><input type="checkbox">３０代</li>
+                    <li><input type="checkbox">４０代</li>
+                    <li><input type="checkbox">５０代</li>
+                    <li><input type="checkbox">６０歳以上</li>
+                </ul>
+
+                <p>求職者経験年数</p>
+                <hr>
+                <ul>
+                    <li><input type="radio">全て</li>
+                    <li><input type="checkbox">新卒</li>
+                    <li><input type="checkbox">１～３年</li>
+                    <li><input type="checkbox">３～１０年</li>
+                    <li><input type="checkbox">１０～２０年</li>
+                    <li><input type="checkbox">２０年以上</li>
+                </ul>
+
+                <p>求職者雇用形態</p>
+                <hr>
+                <ul>
+                    <li><input type="radio">全て</li>
+                    <li><input type="checkbox">常勤</li>
+                    <li><input type="checkbox">非常勤</li>
+                    <li><input type="checkbox">日勤</li>
+                    <li><input type="checkbox">夜勤</li>
+                </ul>
+
+                <p>求職者保有資格</p>
+                <hr>
+                <ul>
+                    <li><input type="radio">全て</li>
+                    <li><input type="checkbox">介護</li>
+                    <li><input type="checkbox">看護</li>
+                    <li><input type="checkbox">保育</li>
+                    <li><input type="checkbox">POS</li>
+                    <li><input type="checkbox">技師</li>
+                    <li><input type="checkbox">栄養士</li>
+                    <li><input type="checkbox">デンタル</li>
+                </ul>
+            </div> -->
+</header>
+
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+    <footer>
+        <a href="#">問合せ</a>
+    </footer>
+</body>
+
+</html>

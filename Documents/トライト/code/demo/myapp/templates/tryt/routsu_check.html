@@ -1,0 +1,29 @@
+{% extends "tryt/base.html" %}
+
+{% block content %}
+
+<h2>労通新規作成 - 労通情報確認</h2>
+
+<table>
+    <tr>
+        <td>SFID</td>
+        <td>{000000}</td>
+        <td>施設名</td>
+        <td>{{ routsu_info.FCL_NAME }}</td>
+        <td>求職者名</td>
+        <td>{{ routsu_info.SK_NAME }}</td>
+    </tr>
+    <tr>
+        <td colspan="6">トライトキャリア　支社名　部署　担当名　000-0000-0000</td>
+    </tr>
+</table>
+
+{% include 'myapp/templates/format_comp_routsu.html' %}
+<br>
+<button onclick="location.href='#'">戻る</button>
+<button onclick="location.href='/sendmail_to_facility'">この内容でメール送信する</button>
+
+<div>
+    <!-- ログ -->
+</div>
+{% endblock %}

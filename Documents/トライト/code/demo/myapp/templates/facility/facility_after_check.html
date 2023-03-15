@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type='text/javascript'>
+        //ダウンロード処理２回呼び出し
+        function download_file() {
+            handleDownload("誓約書.pdf");
+            handleDownload("労働条件通知書.pdf");
+        }
+        function handleDownload(name) {
+            // IEの場合
+            if (window.navigator.msSaveBlob) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "pdf_disp/" + name, true);//メソッド呼び出し
+                xhr.responseType = "blob";//アクセスするのはファイルであること
+                xhr.onload = function (e) {
+                    //ダウンロード処理
+                    var blob = xhr.response;
+                    window.navigator.msSaveBlob(blob, name);
+                }
+                xhr.send();
+                return;
+            }
+            // chrome,firefox
+            var a = document.createElement('a');
+            a.download = name;
+            a.href = "pdf_disp/" + name;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+    <style>
+        body {
+            font-family: HeiseiMin-W3;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>労働条件通知書ご確認</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% include 'myapp/templates/format_routsu.html' %}
+
+        <br>
+        <button type="submit" onclick="download_file()">PDFダウンロード</button>
+    </form>
+    <footer>
+        <a href="#">問合せ</a>
+    </footer>
+</body>
+
+</html>

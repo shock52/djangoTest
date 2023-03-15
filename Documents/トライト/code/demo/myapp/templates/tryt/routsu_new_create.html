@@ -1,0 +1,107 @@
+{% extends "tryt/base.html" %}
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/routsu_new_create.css' %}">
+    <title>ログイン</title>
+</head>
+
+<h2 class="heading">労通新規作成 - 基本情報入力</h2>
+<h3 class="instruction">項目を入力または選択してください</h3>
+<p class="caution">※は必須項目となります</p>
+<form method="post" action="">
+    {% csrf_token %}
+<table class="datatable">
+    <tr>
+        <td>SFID</td>
+        <td><input class="input" type="text" placeholder="　施設のセールスフォースIDを入力" name="sfid" id="sfid"></td>
+        <td class="space"></td>
+        <td>社　　名</td>
+        <td><select class="input">
+                <option>選択してください</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>求職者名</td>
+        <td><input class="input" type="text" placeholder="　求職者名を入力" name="sk_name" id="sk_name"></td>
+        <td class="space"></td>
+        <td>支　　社</td>
+        <td><select class="input">
+                <option>選択してください</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>法人SFID</td>
+        <td><input class="input" type="text" placeholder="　施設のセールスフォースIDを入力"></td>
+        <td class="space"></td>
+        <td>部　　署</td>
+        <td><select class="input">
+                <option>選択してください</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>法人担当者</td>
+        <td><input class="input" type="text" placeholder="　法人担当者名を入力"></td>
+        <td class="space"></td>
+        <td>営業担当</td>
+        <td><input class="input" type="text" placeholder="　担当者を入力してください"></td>
+    </tr>
+    <tr>
+        <td>就業施設</td>
+        <td><input class="input" type="text" placeholder="　就業施設名を入力" name="fcl_name" id="fcl_name"></td>
+        <td class="space"></td>
+        <td>担当連絡先</td>
+        <td><input class="input" type="text" placeholder="　施設の電話番号を入力"></td>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<div class="form-seekerdata">
+<h3 class="instruction">求職者 内部管理用情報</h3>
+<p class="seekercaution">※労通には表示されません。入力は任意となります。</p>
+<table class="seekerdatatale">
+    <tr>
+        <td>経験年数　</td>
+        <td><input class="input" type="text" placeholder="経験年数を入力"></td>
+        <td class="space"></td>
+        <td>保有資格　</td>
+        <td><select class="input">
+                <option>業種を選択した後、選択してください</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>業　　種</td>
+        <td><select class="input">
+                <option>選択してください</option>
+            </select>
+        </td>
+        <td class="space"></td>
+        <td>職　　種</td>
+        <td><select class="input">
+                <option>業種を選択した後、選択してください</option>
+            </select></td>
+    </tr>
+</table>
+</div>
+
+<br>
+<br>
+
+<div class="btn-group">
+<button class="returnbtn" onclick="location.href='/dashboard'">ダッシュボードへ戻る</button>
+<button class="btn" type="submit">この内容で労通を作成する</button>
+</div>
+
+</form>
+
+<br>
+
+<div class="log">
+    <!-- ログ -->
+</div>
+
+{% endblock %}

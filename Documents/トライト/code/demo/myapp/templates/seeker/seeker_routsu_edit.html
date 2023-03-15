@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type='text/javascript'>
+        //ダウンロード処理２回呼び出し
+        function download_file() {
+            // handleDownload("誓約書.pdf");
+            handleDownload("労働条件通知書.pdf");
+        }
+        function handleDownload(name) {
+            // IEの場合
+            if (window.navigator.msSaveBlob) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "pdf_disp/" + name, true);//メソッド呼び出し
+                xhr.responseType = "blob";//アクセスするのはファイルであること
+                xhr.onload = function (e) {
+                    //ダウンロード処理
+                    var blob = xhr.response;
+                    window.navigator.msSaveBlob(blob, name);
+                }
+                xhr.send();
+                return;
+            }
+            // chrome,firefox
+            var a = document.createElement('a');
+            a.download = name;
+            a.href = "pdf_disp/" + name;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // フォーム表示
+        function OnButtonClick() {
+            document.getElementById("output_textbox").style.display = "";
+        }
+    </script>
+</head>
+
+<body>
+    <script src="modal.js"></script>
+    <dialog>
+        <h3>労働条件通知書作成サービス</h3>
+        <br>
+        <p>利用規約</p>
+
+        <form>
+            <p><input type="checkbox">利用規約に同意する</p>
+            <p>ご本人様確認のため、営業にお伝えしている電話番号をご入力ください</p>
+            <input type="text" value="電話番号をご入力ください">
+            <button>入力フォームに進む</button>
+        </form>
+    </dialog>
+
+    <h2>労働条件通知書作成フォーム</h2>
+
+    <h3>以下の項目を選択または入力してください</h3>
+    <p style="color: red;">※は必須項目となります</p>
+
+    {% include 'test\templates\format_routsu.html' %}
+
+    <button onclick="download_file()">PDFダウンロード</button>
+    <br>
+
+    <button onclick="location.href='#'">受諾する</button>
+    <button onclick="OnButtonClick()">保留する</button>
+    <button onclick="OnButtonClick()">相談したい</button>
+    <button onclick="OnButtonClick()">辞退する</button>
+
+    <div id="output_textbox" style="display: none;">
+        <form>
+            <p>事由</p>
+            <textarea></textarea>
+            <br>
+            <input type="submit" value="送信">
+        </form>
+    </div>
+
+    <footer>
+        <a href="#">問合せ</a>
+    </footer>
+</body>
+
+</html>
